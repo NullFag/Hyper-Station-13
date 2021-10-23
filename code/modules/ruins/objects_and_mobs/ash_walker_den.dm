@@ -12,11 +12,16 @@
 	max_integrity = 200
 	var/faction = list("ashwalker")
 	var/meat_counter = 6
+	var/spawned_obj = /obj/effect/mob_spawn/human/ash_walker
 
 /obj/structure/lavaland/ash_walker/Initialize()
 	.=..()
 	START_PROCESSING(SSprocessing, src)
 
+/obj/structure/lavaland/ash_walker/Destroy()
+	STOP_PROCESSING(SSprocessing, src)
+	return ..()
+	
 /obj/structure/lavaland/ash_walker/deconstruct(disassembled)
 	new /obj/item/assembly/signaler/anomaly (get_step(loc, pick(GLOB.alldirs)))
 	new /obj/effect/collapse(loc)
@@ -60,7 +65,7 @@
 
 /obj/structure/lavaland/ash_walker/proc/spawn_mob()
 	if(meat_counter >= ASH_WALKER_SPAWN_THRESHOLD)
-		new /obj/effect/mob_spawn/human/ash_walker(get_step(loc, pick(GLOB.alldirs)))
+		new spawned_obj(get_step(loc, pick(GLOB.alldirs)))
 		visible_message("<span class='danger'>One of the eggs swells to an unnatural size and tumbles free. It's ready to hatch!</span>")
 		meat_counter -= ASH_WALKER_SPAWN_THRESHOLD
 
@@ -75,3 +80,10 @@
 	M.mind.grab_ghost()
 	to_chat(M, "<b>You have been pulled back from beyond the grave, with a new body and renewed purpose. Glory to the Necropolis!</b>")
 	playsound(get_turf(M),'sound/magic/exit_blood.ogg', 100, TRUE)
+
+/obj/structure/lavaland/ash_walker/western
+	spawned_obj = /obj/effect/mob_spawn/human/ash_walker/western
+
+/obj/structure/lavaland/ash_walker/eastern
+	spawned_obj = /obj/effect/mob_spawn/human/ash_walker/eastern
+
