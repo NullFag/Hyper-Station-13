@@ -16,6 +16,10 @@
 	spillable = TRUE
 	var/obj/item/grinded
 
+/obj/item/reagent_containers/glass/mortar/Destroy()
+	QDEL_NULL(grinded)
+	return ..()
+	
 /obj/item/reagent_containers/glass/mortar/AltClick(mob/user)
 	. = ..()
 	if(grinded)
