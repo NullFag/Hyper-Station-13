@@ -45,8 +45,16 @@
 /datum/species/lizard/ashwalker/western //i could make it a seperate species but hyper code is already snuffed anyways
 	name = "Western Ash Walker"
 	species_traits = list(MUTCOLORS,EYECOLOR,LIPS)
+
+/datum/species/lizard/ashwalker/western/on_species_gain(mob/living/carbon/human/C, datum/species/old_species)
+	C.dna.features["legs"] = "Normal Legs" //hyper code
+	return ..()
 	
 /datum/species/lizard/ashwalker/eastern
 	name = "Eastern Ash Walker"
 	burnmod = 0.85
 	brutemod = 0.85
+
+/datum/species/lizard/ashwalker/western/on_species_gain(mob/living/carbon/human/C, datum/species/old_species)
+	C.dna.features["legs"] = "Digitigrade Legs" //just to be safe
+	return ..()

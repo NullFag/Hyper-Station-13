@@ -4029,7 +4029,7 @@
 /turf/open/lava/smooth/lava_land_surface,
 /area/ruin/unpowered/ash_walkers)
 "pC" = (
-/obj/structure/lavaland/ash_walker,
+/obj/structure/lavaland/ash_walker/eastern,
 /turf/open/lava/smooth/lava_land_surface,
 /area/ruin/unpowered/ash_walkers)
 "pD" = (
@@ -4209,6 +4209,10 @@
 	pixel_y = 6
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered/ash_walkers)
+"sB" = (
+/obj/structure/lavaland/ash_walker/western,
+/turf/open/lava/smooth/lava_land_surface,
 /area/ruin/unpowered/ash_walkers)
 "sC" = (
 /obj/machinery/door/poddoor/preopen{
@@ -8096,7 +8100,7 @@ gi
 kK
 gi
 Gn
-pC
+sB
 ld
 gi
 kK
