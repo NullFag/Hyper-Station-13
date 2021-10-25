@@ -171,6 +171,7 @@ Lawyer
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2
+	minimal_player_age = 14
 	supervisors = "the head of personnel"
 	selection_color = "#dddddd"
 	var/lawyers = 0 //Counts lawyer amount
