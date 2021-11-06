@@ -2760,15 +2760,15 @@
 /area/lavaland/surface/outdoors)
 "fC" = (
 /obj/structure/table/wood,
-/obj/item/clothing/under/gladiator{
+/obj/item/clothing/under/tribal/gladiator_armor{
 	pixel_x = 6;
 	pixel_y = 6
 	},
-/obj/item/clothing/under/gladiator{
+/obj/item/clothing/under/tribal/gladiator_armor{
 	pixel_x = 2;
 	pixel_y = 2
 	},
-/obj/item/clothing/under/gladiator{
+/obj/item/clothing/under/tribal/gladiator_armor{
 	pixel_x = -2;
 	pixel_y = -2
 	},
@@ -4895,15 +4895,15 @@
 /area/ruin/unpowered/ash_walkers)
 "Fr" = (
 /obj/structure/table/wood,
-/obj/item/clothing/under/gladiator{
+/obj/item/clothing/under/tribal/gladiator_armor{
 	pixel_x = -6;
 	pixel_y = 6
 	},
-/obj/item/clothing/under/gladiator{
+/obj/item/clothing/under/tribal/gladiator_armor{
 	pixel_x = -10;
 	pixel_y = 2
 	},
-/obj/item/clothing/under/gladiator{
+/obj/item/clothing/under/tribal/gladiator_armor{
 	pixel_x = -14;
 	pixel_y = -2
 	},
