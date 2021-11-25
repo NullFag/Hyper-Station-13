@@ -35,7 +35,7 @@ SUBSYSTEM_DEF(age_check)
 	
 	var/query = "INSERT INTO [format_table_name("age_verified")] (ckey) VALUES "
 	for(var/ckey in listed_ckeys)
-		query += "('[sanitizeSQL(ckey]'), "
+		query += "('[sanitizeSQL(ckey)]'), "
 	
 	query = copytext_char(query, 1, length(query) - 2)
 	var/datum/DBQuery/query_insert_ckeys = SSdbcore.NewQuery(query)

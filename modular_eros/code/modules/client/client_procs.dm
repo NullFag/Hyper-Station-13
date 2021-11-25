@@ -16,7 +16,7 @@
 	"Big hard throbbing cocks", "It's kinda funny how this actually needs to be a thing", "The message was funnier, but people can't take jokes", )
 	if(ckey in SSage_check.passed_ua_check)
 		return
-		
+
 	var/funnies = alert(src, "Are you over the age of 18? (This message was much funnier but funny legals.)\n", pick(funne_reddit),\
 	"No", "Yes", agecheck_criticalfailure)
 	if(funnies != "Yes")
@@ -27,5 +27,4 @@
 			message_admins("Funny user \'[key_name(src)]\' said \"[funnies]\" to the 18+ prompt, we're just gonna boot them for this round. It's on your ass now what you choose to do with them. - Null")
 		qdel(src)
 		return
-	SSdbcore.NewQuery("INSERT INTO [format_table_name("age_verified")] ckey VALUES '[sanitizeSQL(usr.ckey]'")
 	SSage_check.passed_ua_check += ckey
