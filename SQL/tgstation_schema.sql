@@ -68,7 +68,7 @@ DROP TABLE IF EXISTS `age_verified`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `age_verified` (
   `ckey` varchar(32) NOT NULL,
-  PRIMARY KEY (`age_vers`)
+  PRIMARY KEY (`ckey`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
