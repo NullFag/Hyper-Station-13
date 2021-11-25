@@ -60,6 +60,19 @@ CREATE TABLE `admin_ranks` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Table structure for table `age_verified`
+--
+
+DROP TABLE IF EXISTS `age_verified`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `age_verified` (
+  `ckey` varchar(32) NOT NULL,
+  PRIMARY KEY (`age_vers`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Table structure for table `ban`
 --
 
