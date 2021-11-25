@@ -176,8 +176,6 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 #if (PRELOAD_RSC == 0)
 GLOBAL_LIST_EMPTY(external_rsc_urls)
 #endif
-//GLOBAL_LIST_EMPTY(underage_ckeys)
-//GLOBAL_LIST_EMPTY(already_logged_fucking_kill) //no one told how to check for reconnects
 /client/New(TopicData)
 	world.SetConfig("APP/admin", ckey, "role=admin")			//CITADEL EDIT - Allows admins to reboot in OOM situations
 	var/tdata = TopicData //save this for later use
@@ -288,27 +286,6 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 
 	. = ..()	//calls mob.Login()
 	
-	//Very funny but this will pretty much do nothing other than being annoying
-	/*
-	if(ckey in GLOB.underage_ckeys)
-		to_chat(src, "Yeah no, you're not getting in for this round.")
-		qdel(src)
-		return
-		
-	var/static/list/funne_reddit = list("Underage Detector 9000 \[TM\]", "Better on the rebase", "This will go on reddit",\
-	"Why are we still here", "Lance will mald", "ERP interactions were a mistake", "Actual lawyer bird look", "Todo: add more meme titles",\
-	"This was gonna be good but i'm lazy", "Screee", "Courtesy of null", "It's a shitpost, how could you tell?",\
-	"Big hard throbbing cocks", "It's kinda funny how this actually needs to be a thing", "The message was funnier, but people can't take jokes", )
-	if(!(ckey in GLOB.already_logged_fucking_kill))
-		var/funnies = alert(src, "Are you less than 18 years old, and willing to see HOT STEAMY PIXEL SEXOOO?!1!\n", pick(funne_reddit),\
-		"no i'm not what the fuck", "yes owo, i'm a tiny cub to be lewded~ btw i have a 39 inch cock")
-		if(funnies != "no i'm not what the fuck")
-			message_admins("Funny user \'[key_name(src)]\' said \"[funnies]\" to the 18+ prompt, we're just gonna boot them for this round. I don't care to figure out how to properly ban people so it's on your ass now. - Null")
-			GLOB.underage_ckeys += ckey
-			qdel(src)
-			return
-		GLOB.already_logged_fucking_kill += ckey
-		*/
 
 	if (byond_version >= 512)
 		if (!byond_build || byond_build < 1386)
