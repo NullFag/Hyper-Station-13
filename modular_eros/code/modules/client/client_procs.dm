@@ -16,6 +16,7 @@
 	"Big hard throbbing cocks", "It's kinda funny how this actually needs to be a thing", "The message was funnier, but people can't take jokes", )
 	if(ckey in SSage_check.passed_ua_check)
 		return
+		
 	var/funnies = alert(src, "Are you over the age of 18? (This message was much funnier but funny legals.)\n", pick(funne_reddit),\
 	"No", "Yes", agecheck_criticalfailure)
 	if(funnies != "Yes")
