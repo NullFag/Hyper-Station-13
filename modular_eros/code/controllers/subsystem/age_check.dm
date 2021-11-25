@@ -13,8 +13,8 @@ SUBSYSTEM_DEF(age_check)
 	if(!SSdbcore.Connect())
 		message_admins("Age Check Subsystem - Failed to establish database connection. Everyone will have to go through the prompt now.")
 		return ..()
-		
-	var/datum/DBQuery/query_get_age_checkeds = SSdbcore.NewQuery("SELECT age_vers FROM [format_table_name("age_verified")]")
+
+	var/datum/DBQuery/query_get_age_checkeds = SSdbcore.NewQuery("SELECT ckey FROM [format_table_name("age_verified")]")
 	if(query_get_age_checkeds.Execute())
 		while(query_get_age_checkeds.NextRow())
 			passed_ua_check += query_get_age_checkeds.item[1]
