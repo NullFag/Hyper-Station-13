@@ -29,12 +29,17 @@ SUBSYSTEM_DEF(age_check)
 	if(!query_get_age_checkeds.Execute())
 		return ..()
 
+	var/list/our_ckeys = passed_ua_check
 	var/list/listed_ckeys = list()	
 	while(query_get_age_checkeds.NextRow())
 		listed_ckeys += query_get_age_checkeds.item[1]
 	
+	our_ckeys -= listed_ckeys
+	if(!our_ckeys.len)
+		return ..()
+
 	var/query = "INSERT INTO [format_table_name("age_verified")] (ckey) VALUES "
-	for(var/ckey in listed_ckeys)
+	for(var/ckey in our_ckeys)
 		query += "('[sanitizeSQL(ckey)]'), "
 	
 	query = copytext_char(query, 1, length(query) - 2)
@@ -45,3 +50,5 @@ SUBSYSTEM_DEF(age_check)
 /datum/controller/subsystem/age_check/proc/prompt_global_age_check()
 	for(var/client/C in GLOB.clients)
 		INVOKE_ASYNC(C, /client.proc/prompt_age_check)
+
+	
